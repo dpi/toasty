@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .toasty-toaster {
+    position: relative;
+    z-index: 750;
+  }
+}
