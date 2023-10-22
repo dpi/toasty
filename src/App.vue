@@ -5,6 +5,8 @@ import Pusher from 'pusher-js'
 import { formatDistanceToNowStrict } from 'date-fns'
 
 const Config = window.PusherConfiguration
+
+// https://github.com/pusher/pusher-js#configuration
 const pusherOptions = {
   cluster: Config.options.cluster
 }
@@ -136,7 +138,7 @@ const gotoLink = (link) => {
                 </p>
                 <p
                   class="mt-1 text-sm text-gray-500"
-                  v-if="latest?.description !== NULL && latest?.description.length > 0"
+                  v-if="latest?.description !== undefined && latest?.description.length > 0"
                 >
                   {{ latest?.description }}
                 </p>
