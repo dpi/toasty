@@ -1,18 +1,18 @@
 {
-  "name": "toasty",
-  "version": "0.0.1",
+  "name": "@dpi/toasty",
+  "version": "0.0.3",
   "private": false,
   "license": "MIT",
   "type": "module",
   "files": [
     "dist"
   ],
-  "main": "./dist/main.js",
-  "module": "./dist/main.js",
+  "main": "./dist/toasty.js",
+  "module": "./dist/toasty.js",
   "exports": {
     ".": {
-      "import": "./dist/my-lib.js",
-      "require": "./dist/my-lib.umd.cjs"
+      "import": "./dist/toasty.js",
+      "require": "./dist/toasty.umd.cjs"
     }
   },
   "scripts": {
