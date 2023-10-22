@@ -21,7 +21,9 @@ pusher.signin()
 
 // https://pusher.com/docs/channels/using_channels/events/#binding-on-the-user-object
 pusher.user.bind('bus-logs', (data) => {
-  debugMessages.value.push(JSON.stringify(data))
+  if (Config.toastyDebug === true) {
+    debugMessages.value.push(JSON.stringify(data))
+  }
   messages.value.push(data)
 })
 
