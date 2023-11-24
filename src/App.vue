@@ -8,16 +8,23 @@ const Config = window.PusherConfiguration
 
 // https://github.com/pusher/pusher-js#configuration
 const pusherOptions = {
-  cluster: Config.options.cluster
+  cluster: Config.options.cluster,
 }
+
+pusherOptions.wsHost = Config.options?.wsHost;
+pusherOptions.wsPort = Config.options?.wsPort;
+pusherOptions.wssPort = Config.options?.wssPort;
+pusherOptions.forceTLS = Config.options?.forceTLS;
+pusherOptions.enableStats = Config.options?.enableStats;
+pusherOptions.enabledTransports = Config.options?.enabledTransports;
+
 const endpoint = Config.options.userAuthentication?.endpoint
 if (endpoint) {
   pusherOptions.userAuthentication = {
     endpoint: Config.options.userAuthentication?.endpoint
   }
 }
-
-const pusher = new Pusher(Config.appKey, pusherOptions)
+const pusher = new Pusher(Config.appKey, pusherOptions);
 
 pusher.signin()
 
