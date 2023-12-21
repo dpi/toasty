@@ -1,10 +1,10 @@
 <script setup>
-import { ref, computed, watch } from 'vue'
+import {ref, computed, watch, inject} from 'vue'
 import { XMarkIcon } from '@heroicons/vue/20/solid'
 import Pusher from 'pusher-js'
 import { formatDistanceToNowStrict } from 'date-fns'
 
-const Config = window.PusherConfiguration
+const Config = inject('pusher-configuration');
 
 // https://github.com/pusher/pusher-js#configuration
 const pusherOptions = {

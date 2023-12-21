@@ -11,4 +11,7 @@ const timeagoOptions = {
   }
 }
 
-createApp(App).use(timeago, timeagoOptions).mount('.toasty-toaster')
+createApp(App)
+  .use(timeago, timeagoOptions)
+  .provide('pusher-configuration', window.PusherConfiguration)
+  .mount('.toasty-toaster')
